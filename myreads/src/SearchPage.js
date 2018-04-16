@@ -12,7 +12,7 @@ class SearchPage extends Component {
 
   updateQuery = (query) => {
     this.setState(() => ({
-      query: query.trim()
+      query: query
     }))
 
     if (query === ''){
@@ -27,9 +27,15 @@ class SearchPage extends Component {
             showingBooks: []
           });
         } else {
-          this.setState({
-            showingBooks: books
-          });
+          if (this.state.query === ''){ //for if the API request returns after all entries in the search are deleted
+            this.setState({
+              showingBooks: []
+            });
+          } else {
+            this.setState({
+              showingBooks: books
+            });
+          }
         }
         console.log(this.state);
       })
@@ -60,7 +66,7 @@ class SearchPage extends Component {
       </div>
       <div className='search'>
         <input
-          type='text'
+          type='search'
           mulitple='true'
           placeholder='Search for a book.'
           value={query}
