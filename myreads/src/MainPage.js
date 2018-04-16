@@ -28,7 +28,7 @@ class MainPage extends Component {
         </div>
         <br/>
         <div className='sectionHead'
-          style={{color: '#7AE7C7'}}>
+          style={{color: '#F4F2A7'}}>
           Currently Reading
         </div>
         <div className='flexContainer'>
@@ -44,7 +44,8 @@ class MainPage extends Component {
         </div>
         <br/>
         <br/>
-        <div className='sectionHead'>
+        <div className='sectionHead'
+          style={{color: '#5D9EBF'}}>
           Read
         </div>
         <div className='flexContainer'>
@@ -60,7 +61,8 @@ class MainPage extends Component {
         </div>
         <br/>
         <br/>
-        <div className='sectionHead'>
+        <div className='sectionHead'
+          style={{color: '#F28D96'}}>
           Want to Read
         </div>
         <div className='flexContainer'>

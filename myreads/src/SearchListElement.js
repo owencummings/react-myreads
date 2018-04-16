@@ -17,14 +17,40 @@ class SearchListElement extends Component{
     this.props.onShelfChange(event, book)
   }
 
+
+  findColor(shelf){
+
+    const currentlReadingColor =  '#F4F2A7'
+    const readColor = '#5D9EBF'
+    const wantToReadColor = '#F28D96'
+    const noneColor = '#c8c8c8'
+
+    switch(shelf){
+      case 'currentlyReading':
+        return currentlReadingColor
+      case 'read':
+        return readColor
+      case 'wantToRead':
+        return wantToReadColor
+      default:
+        return noneColor
+    }
+
+  }
+
+
+
+
   render(){
     const book = this.props.book
     const matchingBook = this.props.books.filter((book2) => book2.id === book.id)
+    const books = this.props.books
 
     return(
-      <div className='innerListElementContainer'>
+      <div className='innerListElementContainer'
+        style={{borderColor: this.findColor(matchingBook.length === 1 ? matchingBook[0].shelf : 'none')}}>
         <div
-          style={{backgroundImage: `url(${book.imageLinks.thumbnail})`}}
+          style={book.imageLinks? {backgroundImage: `url(${book.imageLinks.thumbnail})`} : {}}
           className='bookImg'
         >
         </div>
@@ -36,7 +62,7 @@ class SearchListElement extends Component{
             by
           </div>
           <div className='author'>
-           {book.authors[0]}
+           {book.authors ? book.authors[0] : 'Unknown'}
           </div>
           <div>
         <select
