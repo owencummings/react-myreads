@@ -24,7 +24,7 @@
   width: 95%;
   border: 5px solid #686868;
   margin: auto;
-  height: 12vw;
+  height: 85%;
   border-radius: 2vw;
   display: flex;
   overflow: hidden;
@@ -60,6 +60,7 @@
   font-size: 2em;
   letter-spacing: 2px;
   font-family: 'Poppins', Helvetica, sans-serif;
+  padding: 10px;
 }
 
 .navLeft{
@@ -134,4 +135,16 @@
   margin: auto;
   text-align: center;
   padding: 2vw;
+}
+
+@media screen and (max-width: 600px){
+  .listElementContainer{
+      width: 80%;
+      height: 50vw;
+  }
+
+  .navMenu{
+    height: 50px;
+  }
+
 }
