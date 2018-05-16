@@ -3,33 +3,40 @@ import * as API from './BookAPI.js';
 import ListElement from './ListElement.js';
 import { Link } from 'react-router-dom';
 
+
 class MainPage extends Component {
 
 
   render() {
     const books = this.props.books
 
+    let animeProps = {
+      opacity: [0, 1],
+      scale: [.2, 1],
+      delay: (el, i) => i * 200
+    }
+
     return (
       <div className='body'>
         <div className='navBar'>
           <div className='navMenu'>
-            <span>
-              My Books
-            </span>
-            <span className='navLeft'>
+            <div className='navEl'>
+              READ
+            </div>
+            <div className='navEl'>
               <Link
                 to='/search'
                 className='browserLink'
               >
                 <i className="fa fa-search"></i>
               </Link>
-            </span>
+            </div>
           </div>
         </div>
         <br/>
         <div className='sectionHead'
-          style={{color: '#F4F2A7'}}>
-          Currently Reading
+          style={{color: '#FF7C72'}}>
+          CURRENTLY READING
         </div>
         <div className='flexContainer'>
           {books.filter((book) => book.shelf === 'currentlyReading')
@@ -45,8 +52,8 @@ class MainPage extends Component {
         <br/>
         <br/>
         <div className='sectionHead'
-          style={{color: '#5D9EBF'}}>
-          Read
+          style={{color: '#A6FF8F'}}>
+          READ
         </div>
         <div className='flexContainer'>
           {books.filter((book) => book.shelf === 'read')
@@ -62,8 +69,8 @@ class MainPage extends Component {
         <br/>
         <br/>
         <div className='sectionHead'
-          style={{color: '#F28D96'}}>
-          Want to Read
+          style={{color: '#61C3FF'}}>
+          WANT TO READ
         </div>
         <div className='flexContainer'>
           {books.filter((book) => book.shelf === 'wantToRead')

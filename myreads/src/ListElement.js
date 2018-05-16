@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as API from './BookAPI.js';
 
+
 class ListElement extends Component{
 
   handleChange = (event, book) => {
@@ -20,9 +21,9 @@ class ListElement extends Component{
 
   findColor(shelf){
 
-    const currentlReadingColor =  '#F4F2A7'
-    const readColor = '#5D9EBF'
-    const wantToReadColor = '#F28D96'
+    const currentlReadingColor =  '#FF7C72'
+    const readColor = '#A6FF8F'
+    const wantToReadColor = '#61C3FF'
     const noneColor = '#c8c8c8'
 
     switch(shelf){
@@ -41,37 +42,38 @@ class ListElement extends Component{
   render(){
     const book = this.props.book
 
+
     return(
-      <div className='innerListElementContainer'
-        style={{borderColor: this.findColor(book.shelf)}}>
-        <div
-          style={{backgroundImage: `url(${book.imageLinks.thumbnail})`}}
-          className='bookImg'
-        >
+        <div className='innerListElementContainer'
+          style={{borderColor: this.findColor(book.shelf)}}>
+          <div
+            style={{backgroundImage: `url(${book.imageLinks.thumbnail})`}}
+            className='bookImg'
+          >
+          </div>
+          <div className='listElementInfoContainer'>
+            <div className='title'>
+              {book.title}
+            </div>
+            <div className='by'>
+              by
+            </div>
+            <div className='author'>
+              {book.authors ? book.authors[0] : 'Unknown'}
+            </div>
+            <div>
+              <select
+                className='select'
+                value={book.shelf ? book.shelf : 'none'}
+                onChange={ (event) => this.handleChange(event, book)}>
+                  <option value="read">Read</option>
+                  <option value="wantToRead">Want to Read</option>
+                  <option value="currentlyReading">Currently Reading</option>
+                  <option value="none">None</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div className='listElementInfoContainer'>
-          <div className='title'>
-            {book.title}
-          </div>
-          <div className='by'>
-            by
-          </div>
-          <div className='author'>
-            {book.authors ? book.authors[0] : 'Unknown'}
-          </div>
-          <div>
-            <select
-              className='select'
-              value={book.shelf ? book.shelf : 'none'}
-              onChange={ (event) => this.handleChange(event, book)}>
-                <option value="read">Read</option>
-                <option value="wantToRead">Want to Read</option>
-                <option value="currentlyReading">Currently Reading</option>
-                <option value="none">None</option>
-            </select>
-          </div>
-        </div>
-      </div>
 
     )
   }

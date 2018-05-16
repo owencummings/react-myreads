@@ -1,6 +1,8 @@
 .app{
   background-color:rgba(255, 170, 170, .3);
-  background-color: white;
+  background-color: #111;
+  box-sizing: border-box;
+  min-height: 110vh;
 }
 
 
@@ -15,61 +17,65 @@
 }
 
 .listElementContainer{
-  width: 33%;
+  width: 28%;
   height: 14vw;
   //border: 1px solid black;
+  color: #ddd;
+  margin: 10px;
 }
 
 .innerListElementContainer{
   width: 95%;
-  border: 5px solid #686868;
+  border: 5px inset #686868;
   margin: auto;
   height: 85%;
-  border-radius: 2vw;
+  border-radius: 2px;
   display: flex;
   overflow: hidden;
+  margin: auto 1vw;
+  padding: 5px;
 }
 
 .sectionHead{
   //max-width: 900px;
   //border: 1px solid blue;
   text-align: center;
-  height: 60px;
-  font-size: 1.5em;
+  font-size: 1em;
+  letter-spacing: 3px;
   color: rgba(255, 170, 170, .7);
   margin: auto;
-  padding-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 15px;
   font: Arial;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
-  font-family: 'Poppins', Helvetica, sans-serif;
+  font-family: Helvetica, 'Archivo Black', Helvetica, sans-serif;
 }
 
 .navBar{
-  background-color: #686868;
+  background-color: #333;
 
 }
 
 .navMenu{
-  max-width: 900px;
+  max-width: 700px;
   margin: auto;
-  height: 4vw;
-  color: white;
+  height: 3vw;
+  color: #ddd;
   //text-transform: uppercase;
   font-weight: bold;
   font-size: 2em;
-  letter-spacing: 2px;
-  font-family: 'Poppins', Helvetica, sans-serif;
+  font-family: 'Archivo Black', Helvetica, sans-serif;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
 }
 
-.navLeft{
-  float: right;
-}
 
 .browserLink{
   text-decoration: none;
-  color: white;
+  color: #ddd;
 }
 
 .browserLink:hover{
@@ -81,13 +87,12 @@
   height: 90%;
   width: 40%;
   margin: auto 0px;
-  margin-left:10px;
   overflow: hidden;
-  //border: 1px solid green;
+  border: 5px inset #444;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 2vw;
+  border-radius: 2px;
 }
 
 
@@ -117,7 +122,9 @@
   width: 80%;
   text-align: center;
   border: 0px;
-
+  border-radius: 2px;
+  color: #ccc;
+  background-color: #333;
 }
 
 .footer{
@@ -135,6 +142,13 @@
   margin: auto;
   text-align: center;
   padding: 2vw;
+  color: #888;
+}
+
+.search{
+  background-color: #444;
+  font-size: 1.2em;
+  color: #ccc;
 }
 
 @media screen and (max-width: 600px){

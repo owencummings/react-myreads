@@ -20,9 +20,9 @@ class SearchListElement extends Component{
 
   findColor(shelf){
 
-    const currentlReadingColor =  '#F4F2A7'
-    const readColor = '#5D9EBF'
-    const wantToReadColor = '#F28D96'
+    const currentlReadingColor =  '#FF7C72'
+    const readColor = '#A6FF8F'
+    const wantToReadColor = '#61C3FF'
     const noneColor = '#c8c8c8'
 
     switch(shelf){
@@ -66,6 +66,7 @@ class SearchListElement extends Component{
           </div>
           <div>
         <select
+          className='select'
           value={ matchingBook.length === 1 ? matchingBook[0].shelf : 'none'}
           onChange={ (event) => this.handleChange(event, book)}>
             <option value="read">Read</option>

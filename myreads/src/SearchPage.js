@@ -52,7 +52,7 @@ class SearchPage extends Component {
       <div className='navBar'>
         <div className='navMenu'>
           <span>
-            My Books
+            READ
           </span>
           <span className='navLeft'>
             <Link
@@ -66,6 +66,7 @@ class SearchPage extends Component {
       </div>
       <div className='search'>
         <input
+          className='search'
           type='search'
           mulitple='true'
           placeholder='Search for a book.'
